@@ -1,0 +1,14 @@
+$bc:lightgrey;
+$bor:4px solid black;
+#nocSec, #eduSec,#wageSec,#totalSec,#areaSec,#clbSec,#expSec{
+border:$bor;
+background-color:$bc;
+}
+body{
+background-color:darkslategrey;
+}
+#score{
+width: 150px;
+height: 40px;
+font-size:35px;
+}

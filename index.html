@@ -1,0 +1,387 @@
+<!--This website can help immigrants to check their eligibility for BC PNP. They can count their scores for BC PNP.
+  Links are used from rom BC Website https://www.welcomebc.ca/
+  @copyright Angad Preet Singh
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div>
+<header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-orange-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl"style="color:white">BC PNP Calculator</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 	flex flex-wrap items-center text-base justify-center" style="color:white">
+      <a class="mr-5 hover:text-gray-900" href="https://angadpreetmalhi.github.io/profile/">About Me</a>
+      <a class="mr-5 hover:text-gray-900" href="https://www.welcomebc.ca/Immigrate-to-B-C/B-C-Provincial-Nominee-Program/Invitations-to-Apply">Latest Draw</a>
+      <a class="mr-5 hover:text-gray-900" href="https://www.welcomebc.ca/">Welcome BC</a>
+    </nav>
+    <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"style="font-weight:bold" onclick="https://www.linkedin.com/in/angad-preet-singh-4a9515199/">LinkedIn
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+</div>
+<form>
+  <section id="nocSec" >
+  <h2>NOC Skill Type</h2>
+    <fieldset>
+    <legend>NOC Category Of Job Offered by BC Employer <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html" ​target="_blank">Find Your NOC</a></legend><br>
+    <div>
+      <input type="radio" id="nocO" onclick="nocSec()" name="noc" value="nocO" >
+      <label for="nocO">NOC O</label>
+
+      <input type="radio" id="nocA" onclick="nocSec()" name="noc" value="nocA">
+      <label for="nocA">NOC A</label>
+
+      <input type="radio" id="nocB" onclick="nocSec()" name="noc" value="nocB" >
+      <label for="nocB">NOC B</label>
+
+      <input type="radio" id="nocC" onclick="nocSec()" name="noc" value="nocC">
+      <label for="nocC">NOC C</label>
+
+      <input type="radio" id="nocD" onclick="nocSec()" name="noc" value="nocD">
+      <label for="nocD">NOC D</label>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Bonus points: If your occupation is identified in <a href="nocOO.html" ​target="_blank">"00" NOC</a></link> </legend><br>
+
+      <input type="radio" id="noc2o" onclick="nocSec()"
+       name="noc1" value="noc2o" disabled>
+      <label for="noc2o">NOC OO</label>
+
+      <input type="radio" id="noc1o" onclick="nocSec(0)"
+       name="noc1" value="noc1o"  disabled>
+      <label for="noc1o">NOC O</label>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Occupation identified in the list of <a href="https://www.workbc.ca/Labour-Market-Industry/Jobs-in-Demand/High-Demand-Occupations.aspx" >Top 100 occupations</a><br>
+        in the BC Labour Market Outlook 2015-2025</legend><br>
+    <div>
+      <input type="radio" id="yes1" onclick="nocSec()"
+       name="noc2" value="yes1" >
+      <label for="yes1">Yes</label>
+
+      <input type="radio" id="no1" onclick="nocSec()"
+       name="noc2" value="no1">
+      <label for="no1">No</label>
+
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Currently working in B.C. for the employer in occupation<br>
+        identified in the BC PNP registration	</legend><br>
+    <div>
+      <input type="radio" id="yes2" onclick="nocSec()"
+       name="noc3" value="yes2" >
+      <label for="yes2">Yes</label>
+
+      <input type="radio" id="no2" onclick="nocSec()"
+       name="noc3" value="no2">
+      <label for="no2">No</label>
+    </div>
+  </fieldset>
+  </section><br>
+  <section id ="wageSec">
+  <h2>Wages and Schedule </h2>
+  <fieldset>
+    <legend>What is your current Pay Rate?</legend><br>
+    <div>
+      <input type="number" id="wage" oninput="nocSec()"
+       name="pay" value="" >
+      <label for="wage">Per Hour &nbsp<span id="error"></span></label>
+    </div>
+
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>How many Hours you are working in a week</legend><br>
+    <div>
+      <input type="number" id="hour" oninput="nocSec()"
+       name="wage" value="" >
+      <label for="hour">Per Week &nbsp<span id="error1"></span></label>
+    </div>
+  </fieldset>
+  </section><br>
+  <section id="expSec">
+  <h2>Directly related work experience</h2>
+  <fieldset>
+    <legend>Directly Related Work Experience in the Occupation<br> of B.C. Job Offer</legend>
+    <div>
+      <input type="radio" id="exp1" onclick="nocSec()"
+       name="exp" value="exp1" >
+      <label for="exp1">5 year +</label>
+    </div>
+    <div>
+      <input type="radio" id="exp2" onclick="nocSec()"
+       name="exp" value="exp2" >
+      <label for="exp2">4 to 5 years</label>
+    </div>
+    <div>
+      <input type="radio" id="exp3" onclick="nocSec()"
+       name="exp" value="exp3" >
+      <label for="exp3">3 to 4 years</label>
+    </div>
+    <div>
+      <input type="radio" id="exp4" onclick="nocSec()"
+       name="exp" value="exp4" >
+      <label for="exp4">2 to 3 years</label>
+    </div>
+    <div>
+      <input type="radio" id="exp5" onclick="nocSec()"
+       name="exp" value="exp5" >
+      <label for="exp5">1 to 2 years</label>
+    </div>
+    <div>
+      <input type="radio" id="exp6" onclick="nocSec()"
+       name="exp" value="exp6" >
+      <label for="exp6">Less than 1</label>
+    </div>
+    <div>
+      <input type="radio" id="exp7" onclick="nocSec()"
+       name="exp" value="exp6" >
+      <label for="exp6">None</label>
+    </div>
+
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Bonus Points: At least 1 year of directly related experience<br> in Canada</legend><br>
+    <div>
+      <input type="radio" id="bonus1" onclick="nocSec()"
+       name="expB" value="bonus1">
+      <label for="bonus1">Yes</label>
+      <input type="radio" id="bonus2" onclick="nocSec()"
+       name="expB" value="bonus2">
+      <label for="bonus2">No</label>
+    </div>
+  </fieldset>
+  </section><br>
+  <section id="areaSec">
+    <h2>Regional District of Employment</h2>
+  <fieldset>
+    <legend>Area Of Employment</legend>
+    <div>
+      <input type="radio" id="area1" onclick="nocSec()"
+       name="area" value="area1" >
+      <label for="area1">Stikine, Central Coast, Northern Rockies, Mount Waddington, Skeena-Queen Charlotte, Powell River, Sunshine Coast, Kootenay-Boundary, Alberni-Clayoquot</label><br>
+
+      <input type="radio" id="area2" onclick="nocSec()"
+       name="area" value="area2">
+      <label for="area2">Kitimat-Stikine, Bulkley-Nechako, Squamish-Lillooet, Strathcona, Columbia-Shushwap, East Kootenay</label><br>
+
+      <input type="radio" id="area3" onclick="nocSec()"
+       name="area" value="area3" >
+      <label for="area3">Peace River, Comox Valley, Cariboo, Central Kootenay</label><br>
+
+      <input type="radio" id="area4" onclick="nocSec()"
+       name="area" value="area4">
+      <label for="area4">Okanagan-Similkameen, Cowichan Valley, North Okanagan, Fraser-Fort George</label><br>
+
+      <input type="radio" id="area5" onclick="nocSec()"
+       name="area" value="area5">
+      <label for="area5">Thompson-Nicola, Nanaimo, Central Okanagan</label><br>
+
+      <input type="radio" id="area6" onclick="nocSec()"
+       name="area" value="area6">
+      <label for="area6">Capital, Fraser Valley</label><br>
+
+      <input type="radio" id="area7" onclick="nocSec()"
+       name="area" value="area7">
+      <label for="area7">Greater Vancouver</label><br>
+    </div>
+  </fieldset>
+   </section><br>
+  <section id="eduSec">
+  <h2>Education</h2>
+  <fieldset>
+    <legend>Highest level of education</legend>
+    <div>
+      <input type="radio" id="edu1" onclick="nocSec()"
+       name="edu" value="edu1" >
+      <label for="edu1">Doctoral or Master’s degree</label><br>
+
+      <input type="radio" id="edu2" onclick="nocSec()"
+       name="edu" value="edu1">
+      <label for="edu2">Post Graduate Certificate or Diploma</label><br>
+
+      <input type="radio" id="edu3" onclick="nocSec()"
+       name="edu" value="edu3" >
+      <label for="edu3">Bachelor’s degree</label><br>
+
+      <input type="radio" id="edu4" onclick="nocSec()"
+       name="edu" value="edu4">
+      <label for="edu4">Trades certification	</label><br>
+
+      <input type="radio" id="edu5" onclick="nocSec()"
+       name="edu" value="edu5">
+      <label for="edu5">Associate Degree	</label><br>
+
+      <input type="radio" id="edu6" onclick="nocSec()"
+       name="edu" value="edu6">
+      <label for="edu6">Non-trades certification or Diploma</label><br>
+
+      <input type="radio" id="edu7" onclick="nocSec()"
+       name="edu" value="edu7">
+      <label for="edu7">High School</label><br>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Post-secondary education completed in B.C</legend><br>
+    <div>
+      <input type="radio" id="yes4" onclick="nocSec()"
+       name="postedu" value="yes4" >
+      <label for="yes4">Yes</label>
+
+      <input type="radio" id="no4" onclick="nocSec()"
+       name="postedu" value="no4">
+      <label for="no4">No</label>
+
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Post-secondary education completed in Canada (outside of B.C.)</legend><br>
+    <div>
+      <input type="radio" id="yes5" onclick="nocSec()"
+       name="postEdu1" value="yes5" disabled>
+      <label for="yes5">Yes</label>
+
+      <input type="radio" id="no5" onclick="nocSec()"
+       name="postEdu1" value="no5" disabled>
+      <label for="no5">No</label>
+
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Education Credential Assessment from a qualified supplier</legend><br>
+    <div>
+      <input type="radio" id="yes6" onclick="nocSec()"
+       name="credential" value="yes6" >
+      <label for="yes6">Yes</label>
+
+      <input type="radio" id="no6" onclick="nocSec()"
+       name="credential" value="no6">
+      <label for="no6">No</label>
+
+    </div>
+  </fieldset>
+  <br>
+   <fieldset>
+    <legend>Trades certification assessment from the Industry Training Authority</legend><br>
+    <div>
+      <input type="radio" id="yes7" onclick="nocSec()"
+       name="trade" value="yes7" >
+      <label for="yes7">Yes</label>
+
+      <input type="radio" id="no7" onclick="nocSec()"
+       name="trade" value="no7">
+      <label for="no7">No</label>
+
+    </div>
+  </fieldset>
+  </section><br>
+  <section id="clbSec">
+  <h2>Language Points</h2>
+  <fieldset>
+    <legend>Canadian Language Benchmark Level (CLB)</legend>
+    <div>
+      <input type="radio" id="clb10" onclick="nocSec()"
+       name="clb" value="clb10" >
+      <label for="clb10">10+</label><br>
+
+      <input type="radio" id="clb9" onclick="nocSec()"
+       name="clb" value="clb9">
+      <label for="clb9">9</label><br>
+
+      <input type="radio" id="clb8" onclick="nocSec()"
+       name="clb" value="clb8" >
+      <label for="clb8">8</label><br>
+
+      <input type="radio" id="clb7" onclick="nocSec()"
+       name="clb" value="clb7">
+      <label for="clb7">7</label><br>
+
+      <input type="radio" id="clb6" onclick="nocSec()"
+       name="clb" value="clb6">
+      <label for="clb6">6</label><br>
+
+      <input type="radio" id="clb5" onclick="nocSec()"
+       name="clb" value="clb5">
+      <label for="clb5">5</label><br>
+
+      <input type="radio" id="clb4" onclick="nocSec()"
+       name="clb" value="clb4">
+      <label for="clb4">4</label><br>
+
+      <input type="radio" id="clb3" onclick="nocSec()"
+       name="clb" value="clb3">
+      <label for="clb3">Below 4 or No Test</label><br>
+  </div>
+  </fieldset>
+  </section>
+  <br>
+  <section id="totalSec">
+  <fieldset>
+    <legend>Total BC PNP Points</legend>
+    <div>
+      <input type="text" id="score"
+       name="score" value="" >
+      <label for="score"></label>
+    </div>
+  </fieldset>
+  </section>
+</form>
+<div class="copy">
+<p>Copyright @Angad Preet Singh</p>
+</div>
+<script src="main.js">
+</script>
+</body>
+<footer class="text-gray-700 body-font" >
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="text-gray-500" href="https://www.facebook.com/angadpreetmalhi/">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://twitter.com/angadpreetmalhi">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://www.instagram.com/angadpreetmalhi/?hl=en">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/angad-preet-singh-4a9515199/">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+
+</html>
